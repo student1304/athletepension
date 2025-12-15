@@ -6,6 +6,7 @@ interface QuestionnaireData {
   currentWealth: number | null
   retirementAge: number | null
   monthlyPayoutRequired: number | null
+  analysis?: any
 }
 
 interface Props {
