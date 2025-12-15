@@ -1,10 +1,13 @@
+# Development files
 .env
 .env.*
 !.env.example
 
+# Node modules (will be installed during build)
 node_modules/
 frontend/node_modules/
 
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
@@ -12,31 +15,41 @@ __pycache__/
 .Python
 *.so
 
+# Testing
 .pytest_cache/
 coverage/
 *.cover
 .coverage
 
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
 .DS_Store
 
+# Logs
 *.log
 logs/
 
+# Documentation (keep README.md)
 *.md
 !README.md
-docs/
 
-Dockerfile
+# Docker files for local development only
+backend/Dockerfile
+frontend/Dockerfile
 docker-compose.yml
 .dockerignore
 
+# Git
 .git/
 .gitignore
 .gitattributes
 
+# CI/CD
 .github/
 .gitlab-ci.yml
+
+# Railway environment file (use Railway dashboard for env vars)
+.railway.env
