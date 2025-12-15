@@ -77,6 +77,15 @@ class Settings(BaseSettings):
     def celery_backend(self) -> str:
         """Get Celery result backend URL, defaulting to Redis URL."""
         return self.CELERY_RESULT_BACKEND or self.REDIS_URL
+    
+    @property
+    def cors_origins_list(self) -> list[str]:
+        """Parse CORS origins from environment variable or use defaults."""
+        import os
+        cors_env = os.getenv("CORS_ORIGINS")
+        if cors_env:
+            return [origin.strip() for origin in cors_env.split(",")]
+        return self.CORS_ORIGINS
 
 
 # Global settings instance
